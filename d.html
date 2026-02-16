@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biography of Duaa </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .page-wrapper {
+      position: relative;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    h2 {
+      color: #ff6f61;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      margin: 10px 0 10px;
+      color: #777;
+      font-size: 0.9em;
+    }
+    
+    /* Side images styling */
+    .side-images {
+      position: absolute;
+      top: 200px;
+      width: 350px;
+      z-index: 0;
+    }
+    .side-images.left {
+      left: 5px;
+    }
+    .side-images.right {
+      right: 5px;
+    }
+    .side-images img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Video container */
+    .video-container {
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+    }
+    .video-wrapper {
+      flex: 0 0 auto;
+      text-align: center;
+      margin: -298px auto;
+      margin-bottom: -95px;
+    }
+    .video-container video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transform: rotate(90deg);
+      display: block;
+    }
+    .heart-left, .heart-right {
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .heart-left {
+      margin-right: auto;
+    }
+    .heart-right {
+      margin-left: auto;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 1200px) {
+      .side-images {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Play music on user interaction
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('bgMusic');
+      
+      // Try to play immediately
+      audio.play().catch(function() {
+        // If autoplay is blocked, play on first user interaction
+        document.body.addEventListener('click', function() {
+          audio.play();
+        }, { once: true });
+      });
+    });
+  </script>
+
+  <div class="page-wrapper">
+  <header>
+    <h1>Duaa fatima</h1>
+    <p>Born on 17/02/2002 | Beautiful & Amazing</p>
+  </header>
+
+  <!-- Left side images -->
+  <div class="side-images left">
+    <img src="Screenshot 2026-02-15 at 22-34-28 (7) WhatsApp Business.png" alt="Memory 4">
+    <img src="Screenshot 2026-02-14 at 14-42-35 (6) WhatsApp Business.png" alt="Memory 1">
+    <img src="Screenshot 2026-02-15 at 22-33-57 (7) WhatsApp Business.png" alt="Memory 2">
+    <img src="Screenshot 2026-02-15 at 22-34-12 (7) WhatsApp Business.png" alt="Memory 3">
+
+  </div>
+
+  <!-- Right side images -->
+  <div class="side-images right">
+    <img src="Screenshot 2026-02-15 at 22-34-38 (7) WhatsApp Business.png" alt="Memory 9">
+    <img src="Screenshot 2026-02-15 at 22-34-22 (7) WhatsApp Business.png" alt="Memory 7">
+    <img src="Screenshot 2026-02-15 at 22-34-33 (7) WhatsApp Business.png" alt="Memory 8">
+    <img src="Screenshot 2026-02-15 at 22-34-05 (7) WhatsApp Business.png" alt="Memory 6">
+  </div>
+
+  <div class="container">
+    <h2>Biography</h2>
+    <p>Duaa is a wonderful person with a heart full of kindness and creativity. A bright personality who brings joy to everyone around her.</p>
+
+    <h2>Nature</h2>
+    <p>Duaa has the calmest soul I have ever known. She carries peace in her heart and spreads it quietly wherever she goes ❤️.<br/> 
+       she is so caring that sometimes she forgets herself while taking care of others. Her love is soft, pure, and full of warmth. <br/>
+       She is supportive in every situation.<br/>
+       She is sensitive, and her heart feels everything deeply. If she gets hurt, she cries… not because she is weak, but because her heart is too genuine to hide pain.<br/>
+       She used to be so joyful and jolly, always laughing and spreading happiness around her. And even now, though she has become more mature and focused, that beautiful spark still lives inside her.<br/>
+       When she starts something, she gives her 100% to it. She is dedicated, hardworking, and serious about her goals.<br/>
+       She is not demanding at all. In fact, the smallest things make her happy — a kind word, a little surprise, or just pure attention.<br/>
+       She is shy, but her love speaks louder than words.<br/>
+       She is simple, soft-hearted, and strong in her own quiet way. And honestly, having her in my life is the most beautiful blessing. ❤️</p>
+
+    <h2>Hobbies & Interests</h2>
+    <p>She's a creative soul who loves making artwork and drawing, enjoys driving but secretly just wants long drives with me, survives happily on tea and Maggi, treats pets like her babies, loves clicking pictures (especially with me), and honestly believes every outing with me is automatically the best plan ever.</p>
+
+    <h2>Fun Facts</h2>
+    <ul>
+      <li>Her first love is her cat 😭</li>
+      <li>But also loves me alot i know 💞</li>
+      <li>Enjoys photography 📸</li>
+      <li>Has a great sense of humor 😄</li>
+      <li>Loves pets and animals 🐶🐱</li>
+      <li>Enjoyes when i take interst in her talk about her enemies 😂</li>
+      <li>Avoid relatives and stay in room saying she is sick and only i know it 😂💖</li>
+      <li>She hates her dentist coz they are taking so much time in removing her braces 😂😭</li>
+      <li>Every gift that i bought for her she keeps them save even the flowers that are dried but she still keeps them 😘🥰</li>
+    </ul>
+  
+
+    <h2>What i love about her</h2>
+    <ul>
+     <li>There are so many things I love about her that sometimes words feel too small to explain them.</li>
+     <br/><li>I love her eyes — the way they look at me with softness, with trust, with love that doesn’t need to be spoken. In her eyes, I see my home.</li>
+     <br/><li>love her hair — the way it falls so perfectly, the way it makes her even more beautiful without her even trying.</li>
+     <br/><li>I love her smile — that simple, innocent smile that can fix my worst days in seconds.</li>
+     <br/><li>I love her face — not just because it’s beautiful, but because it carries peace, purity, and the most comforting expressions.</li>
+     <br/><li>I love her touch — it feels safe, warm, and full of care, like the whole world becomes calm in that moment.</li>
+     <br/><li>I love the way she takes my name… there’s something in her voice when she says it that makes my heart melt every single time.</li>
+     <br/><li>I love how she always supports my decisions. Even when things are difficult, she stands beside me without fear.</li>
+     <br/><li>I love when she feeds me with her own hands — that small act carries so much love, so much belonging.</li>
+     <br/><li>I love when she shows a little possessiveness for me. It makes me feel wanted, valued, and truly hers.</li>
+     <br/><li>I love when she calls me hers — the way she says it makes me feel proud and lucky at the same time.</li>
+     <br/><li>I love how comfortable she is with me. No pretending, no hiding — just her pure, real self.</li>
+     <br/><li>I love how she listened to my family issues, my struggles, my past… and never judged me. Instead, she understood me more deeply.</li>
+     <br/><li>I love when she sends me her pictures without me even asking — like she wants to share her world with me.</li>
+     <br/><li>I love that when I ask her not to do something, she respects my words. Not because she has to, but because she cares about my feelings.</li>
+     <br/><li>I love the way she cares not only for me but also for my family — as if they are her own.</li>
+     <br/>And honestly… there are so many more things I love about her that I don’t even have words for them. All I know is, I love her so much🥰💕.
+     <br/>She is not just my wife… she is my comfort, my happiness, and my heart. ❤️
+    </ul>
+
+    <h2>And in last A birthday wish for my love💖</h2>
+     <P> And today… I just want to thank Allah for the day you were born. Happy Birthday, my love. 🎂❤️ <br/>
+     <br/>May your life always be as soft as your heart, as bright as your smile, and as beautiful as your soul.<br/>
+     <br/>May Allah bless you with endless happiness, good health, long life, and all the success you truly deserve.<br/>
+     <br/>I pray that every tear you have ever cried turns into double the happiness, and every dream you carry in your heart comes true.<br/>
+     <br/>You deserve the purest love, the biggest respect, and the most peaceful life — and I promise to always stand beside you, protect you, and love you more with every passing year.<br/>
+     <br/>On your special day, I just want you to know… you are my greatest blessing, my safest place, and the best decision of my life.<br/>
+     <br/>Happy Birthday, my heart. May we celebrate a lifetime together. 🤍✨</P>
+  </div>
+
+  <!-- Video Section -->
+  <div class="video-container">
+    <img src="14152-illustration-of-a-red-heart-pv.png" alt="Heart" class="heart-left">
+    <div class="video-wrapper">
+      <h2 style="color: #ff6f61;">Our Special Moments 💕</h2>
+      <video controls loop autoplay muted>
+        <source src="WhatsApp Video 2026-02-15 at 10.05.41 PM.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <img src="14152-illustration-of-a-red-heart-pv.png" alt="Heart" class="heart-right">
+  </div>
+
+  <footer>
+    &copy; 2026 Biography of Duaa. Made with ❤️ by Shariq
+  </footer>
+  </div>
+
+</body>
+</html>
