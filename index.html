@@ -179,16 +179,61 @@
   <!-- Background Music -->
   <audio id="bgMusic" loop>
     <source src="song.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
 
+  <!-- Music toggle button -->
+  <div id="musicBtn" onclick="toggleMusic()" title="Play / Pause music" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    user-select: none;
+  ">🎵</div>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const audio = document.getElementById('bgMusic');
-      audio.play().catch(function() {
-        document.body.addEventListener('click', function() {
-          audio.play();
-        }, { once: true });
+    const audio = document.getElementById('bgMusic');
+    const btn = document.getElementById('musicBtn');
+    let playing = false;
+
+    function toggleMusic() {
+      if (playing) {
+        audio.pause();
+        btn.textContent = '🎵';
+        playing = false;
+      } else {
+        audio.play().then(() => {
+          btn.textContent = '⏸';
+          playing = true;
+        }).catch(e => console.log('Audio error:', e));
+      }
+    }
+
+    // Try autoplay on load
+    document.addEventListener('DOMContentLoaded', function () {
+      audio.play().then(() => {
+        btn.textContent = '⏸';
+        playing = true;
+      }).catch(() => {
+        // Autoplay blocked — wait for first interaction anywhere on page
+        document.body.addEventListener('click', function startOnClick() {
+          audio.play().then(() => {
+            btn.textContent = '⏸';
+            playing = true;
+          });
+          document.body.removeEventListener('click', startOnClick);
+        });
       });
     });
   </script>
@@ -201,18 +246,16 @@
 
   <!-- Left side images -->
   <div class="side-images left">
-    <img src="Screenshot 2026-02-15 at 22-34-28 (7) WhatsApp Business.png" alt="Memory 4">
-    <img src="Screenshot 2026-02-14 at 14-42-35 (6) WhatsApp Business.png" alt="Memory 1">
-    <img src="Screenshot 2026-02-15 at 22-33-57 (7) WhatsApp Business.png" alt="Memory 2">
-    <img src="Screenshot 2026-02-15 at 22-34-12 (7) WhatsApp Business.png" alt="Memory 3">
+    <img src="img1.jpg" alt="Memory 4">
+    <img src="Screenshot 2026-02-14 at 14-42-35 (6) WhatsApp Business.jpg" alt="Memory 1">
+    <img src="Screenshot 2026-02-15 at 22-33-57 (7) WhatsApp Business.jpg" alt="Memory 2">
   </div>
 
   <!-- Right side images -->
   <div class="side-images right">
-    <img src="Screenshot 2026-02-15 at 22-34-38 (7) WhatsApp Business.png" alt="Memory 9">
-    <img src="Screenshot 2026-02-15 at 22-34-22 (7) WhatsApp Business.png" alt="Memory 7">
-    <img src="Screenshot 2026-02-15 at 22-34-33 (7) WhatsApp Business.png" alt="Memory 8">
-    <img src="Screenshot 2026-02-15 at 22-34-05 (7) WhatsApp Business.png" alt="Memory 6">
+    <img src="Screenshot 2026-02-15 at 22-34-05 (7) WhatsApp Business.jpg" alt="Memory 6">
+    <img src="Screenshot 2026-02-15 at 22-34-22 (7) WhatsApp Business.jpg" alt="Memory 7">
+    <img src="Screenshot 2026-02-15 at 22-34-33 (7) WhatsApp Business.jpg" alt="Memory 8">
   </div>
 
   <div class="container">
