@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For Duaa</title>
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
@@ -12,60 +14,59 @@
       margin: 0;
       padding: 0;
     }
-    .page-wrapper {
-      position: relative;
-      min-height: 100vh;
-    }
+
+    /* ── HEADER ── */
     header {
       background-color: #ff6f61;
       color: white;
       text-align: center;
-      padding: 30px 0;
+      padding: 28px 16px;
     }
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: clamp(1.4em, 5vw, 2em);
     }
     header p {
-      font-size: 1.2em;
+      font-size: clamp(0.95em, 3vw, 1.2em);
+      margin: 8px 0 0;
     }
+
+    /* ── PAGE WRAPPER ── */
+    .page-wrapper {
+      position: relative;
+    }
+
+    /* ── SIDE IMAGES — desktop only ── */
+    .side-images {
+      position: absolute;
+      top: 200px;
+      width: 300px;
+      z-index: 2;
+    }
+    .side-images.left  { left: 5px; }
+    .side-images.right { right: 5px; }
+    .side-images img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: block;
+    }
+
+    /* ── MAIN CONTENT CARD ── */
     .container {
       max-width: 800px;
       margin: 30px auto;
       background: white;
-      padding: 20px;
+      padding: 24px 28px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 8px;
       position: relative;
       z-index: 1;
     }
-    
-    @media (max-width: 1400px) {
-      .container {
-        max-width: 600px;
-      }
-      .side-images {
-        width: 250px;
-      }
-      .side-images.left {
-        left: 10px;
-      }
-      .side-images.right {
-        right: 10px;
-      }
-    }
-    
-    @media (max-width: 1200px) {
-      .container {
-        max-width: 500px;
-      }
-      .side-images {
-        width: 200px;
-      }
-      .side-images img {
-        height: 450px;
-      }
-    }
+
     img {
       max-width: 100%;
       border-radius: 8px;
@@ -74,55 +75,62 @@
     }
     h2 {
       color: #ff6f61;
-      margin-top: 30px;
+      margin-top: 28px;
+      font-size: clamp(1em, 4vw, 1.3em);
     }
-    p {
-      line-height: 1.6;
-    }
+    p, li { line-height: 1.7; }
+    ul { padding-left: 20px; }
+
     footer {
       text-align: center;
-      margin: 10px 0 10px;
+      padding: 16px;
       color: #777;
       font-size: 0.9em;
     }
-    
-    /* Side images styling */
-    .side-images {
-      position: absolute;
-      top: 200px;
-      width: 300px;
-      z-index: 2;
+
+    /* ── MOBILE GALLERY (shown only on mobile) ── */
+    .mobile-gallery {
+      display: none;
+      padding: 16px;
     }
-    .side-images.left {
-      left: 5px;
+    .mobile-gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
-    .side-images.right {
-      right: 5px;
-    }
-    .side-images img {
+    .mobile-gallery-grid img {
       width: 100%;
-      height: 600px;
+      height: 180px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      margin: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
-    
-    /* Video container */
-    .video-container {
-      max-width: 900px;
-      margin: 40px auto;
+    .mobile-gallery h3 {
+      color: #ff6f61;
       text-align: center;
-      padding: 20px 40px;
+      margin: 0 0 12px;
+      font-size: 1em;
+    }
+
+    /* ── VIDEO SECTION ── */
+    .video-container {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 20px 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 30px;
+      gap: 24px;
     }
     .video-wrapper {
       flex: 1 1 auto;
       text-align: center;
       max-width: 500px;
+    }
+    .video-wrapper h2 {
+      color: #ff6f61;
+      margin-bottom: 12px;
     }
     .video-container video {
       width: 100%;
@@ -131,46 +139,50 @@
       display: block;
     }
     .heart-left, .heart-right {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       object-fit: contain;
       animation: heartbeat 1.5s ease-in-out infinite;
       flex-shrink: 0;
-      z-index: 0;
     }
     @keyframes heartbeat {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
+      50%       { transform: scale(1.15); }
     }
-    
-    /* Responsive design */
-    @media (max-width: 1000px) {
-      .side-images {
-        position: static;
-        width: 100%;
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 0 20px;
-      }
-      .side-images img {
-        height: auto;
-        max-height: 400px;
-      }
+
+    /* ── TABLET: 768–1100px ── */
+    @media (max-width: 1100px) {
+      .side-images { width: 220px; }
+      .side-images img { height: 460px; }
+      .container { max-width: 520px; }
     }
-    
+
+    /* ── MOBILE: hide side columns, show gallery, stack everything ── */
     @media (max-width: 768px) {
+      .side-images { display: none; }      /* hide absolute side columns */
+      .mobile-gallery { display: block; }  /* show inline grid instead  */
+
+      .container {
+        margin: 16px 12px;
+        padding: 18px 16px;
+        border-radius: 8px;
+      }
+
       .video-container {
         flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        padding: 16px;
+        gap: 16px;
+        margin: 20px auto;
       }
-      .heart-left, .heart-right {
-        width: 70px;
-        height: 70px;
-      }
-      .video-wrapper {
-        width: 100%;
-      }
+      .video-wrapper { max-width: 100%; width: 100%; }
+      .heart-left, .heart-right { width: 60px; height: 60px; }
+
+      footer { font-size: 0.82em; padding: 20px 12px; }
+    }
+
+    @media (max-width: 400px) {
+      header h1 { font-size: 1.25em; }
+      .mobile-gallery-grid img { height: 140px; }
     }
   </style>
 </head>
@@ -179,61 +191,16 @@
   <!-- Background Music -->
   <audio id="bgMusic" loop>
     <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 
-  <!-- Music toggle button -->
-  <div id="musicBtn" onclick="toggleMusic()" title="Play / Pause music" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    background: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 52px;
-    height: 52px;
-    font-size: 22px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-    user-select: none;
-  ">🎵</div>
-
   <script>
-    const audio = document.getElementById('bgMusic');
-    const btn = document.getElementById('musicBtn');
-    let playing = false;
-
-    function toggleMusic() {
-      if (playing) {
-        audio.pause();
-        btn.textContent = '🎵';
-        playing = false;
-      } else {
-        audio.play().then(() => {
-          btn.textContent = '⏸';
-          playing = true;
-        }).catch(e => console.log('Audio error:', e));
-      }
-    }
-
-    // Try autoplay on load
-    document.addEventListener('DOMContentLoaded', function () {
-      audio.play().then(() => {
-        btn.textContent = '⏸';
-        playing = true;
-      }).catch(() => {
-        // Autoplay blocked — wait for first interaction anywhere on page
-        document.body.addEventListener('click', function startOnClick() {
-          audio.play().then(() => {
-            btn.textContent = '⏸';
-            playing = true;
-          });
-          document.body.removeEventListener('click', startOnClick);
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('bgMusic');
+      audio.play().catch(function() {
+        document.body.addEventListener('click', function() {
+          audio.play();
+        }, { once: true });
       });
     });
   </script>
@@ -243,6 +210,19 @@
     <h1>I'm Sorry, Duaa 💔</h1>
     <p>This isn't easy to say, but it needs to be said.</p>
   </header>
+
+  <!-- Mobile gallery (hidden on desktop, shown on mobile) -->
+  <div class="mobile-gallery">
+    <h3>Our Memories 💕</h3>
+    <div class="mobile-gallery-grid">
+      <img src="img1.jpg" alt="Memory 1">
+      <img src="Screenshot 2026-02-14 at 14-42-35 (6) WhatsApp Business.jpg" alt="Memory 2">
+      <img src="Screenshot 2026-02-15 at 22-33-57 (7) WhatsApp Business.jpg" alt="Memory 3">
+      <img src="Screenshot 2026-02-15 at 22-34-05 (7) WhatsApp Business.jpg" alt="Memory 4">
+      <img src="Screenshot 2026-02-15 at 22-34-22 (7) WhatsApp Business.jpg" alt="Memory 5">
+      <img src="Screenshot 2026-02-15 at 22-34-33 (7) WhatsApp Business.jpg" alt="Memory 6">
+    </div>
+  </div>
 
   <!-- Left side images -->
   <div class="side-images left">
