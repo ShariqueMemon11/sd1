@@ -90,8 +90,8 @@
     .side-images {
       position: absolute;
       top: 200px;
-      width: 350px;
-      z-index: 0;
+      width: 300px;
+      z-index: 2;
     }
     .side-images.left {
       left: 5px;
@@ -110,45 +110,37 @@
     
     /* Video container */
     .video-container {
-      max-width: 100%;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: 40px auto;
       text-align: center;
-      padding: 20px;
+      padding: 20px 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 0;
+      justify-content: center;
+      gap: 30px;
     }
     .video-wrapper {
-      flex: 0 0 auto;
+      flex: 1 1 auto;
       text-align: center;
-      margin: -298px auto;
-      margin-bottom: -95px;
+      max-width: 500px;
     }
     .video-container video {
       width: 100%;
-      max-width: 600px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      transform: rotate(90deg);
       display: block;
     }
     .heart-left, .heart-right {
-      width: 250px;
-      height: 250px;
+      width: 100px;
+      height: 100px;
       object-fit: contain;
       animation: heartbeat 1.5s ease-in-out infinite;
       flex-shrink: 0;
-    }
-    .heart-left {
-      margin-right: auto;
-    }
-    .heart-right {
-      margin-left: auto;
+      z-index: 0;
     }
     @keyframes heartbeat {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+      50% { transform: scale(1.15); }
     }
     
     /* Responsive design */
@@ -169,14 +161,15 @@
     @media (max-width: 768px) {
       .video-container {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
+        padding: 20px;
       }
       .heart-left, .heart-right {
-        width: 150px;
-        height: 150px;
+        width: 70px;
+        height: 70px;
       }
       .video-wrapper {
-        margin: 0;
+        width: 100%;
       }
     }
   </style>
@@ -208,21 +201,25 @@
 
   <!-- Left side images -->
   <div class="side-images left">
-    <img src="img1.jpg" alt="Memory 4">
-    <img src="Screenshot 2026-02-14 at 14-42-35 (6) WhatsApp Business.jpg" alt="Memory 1">
-    <img src="Screenshot 2026-02-15 at 22-33-57 (7) WhatsApp Business.jpg" alt="Memory 2">
+    <img src="Screenshot 2026-02-15 at 22-34-28 (7) WhatsApp Business.png" alt="Memory 4">
+    <img src="Screenshot 2026-02-14 at 14-42-35 (6) WhatsApp Business.png" alt="Memory 1">
+    <img src="Screenshot 2026-02-15 at 22-33-57 (7) WhatsApp Business.png" alt="Memory 2">
+    <img src="Screenshot 2026-02-15 at 22-34-12 (7) WhatsApp Business.png" alt="Memory 3">
   </div>
 
   <!-- Right side images -->
   <div class="side-images right">
-    <img src="Screenshot 2026-02-15 at 22-34-05 (7) WhatsApp Business.jpg" alt="Memory 6">
-    <img src="Screenshot 2026-02-15 at 22-34-22 (7) WhatsApp Business.jpg" alt="Memory 7">
-    <img src="Screenshot 2026-02-15 at 22-34-33 (7) WhatsApp Business.jpg" alt="Memory 8">
+    <img src="Screenshot 2026-02-15 at 22-34-38 (7) WhatsApp Business.png" alt="Memory 9">
+    <img src="Screenshot 2026-02-15 at 22-34-22 (7) WhatsApp Business.png" alt="Memory 7">
+    <img src="Screenshot 2026-02-15 at 22-34-33 (7) WhatsApp Business.png" alt="Memory 8">
+    <img src="Screenshot 2026-02-15 at 22-34-05 (7) WhatsApp Business.png" alt="Memory 6">
   </div>
 
   <div class="container">
     <h2>I was wrong.</h2>
     <p>I know saying sorry doesn't undo what happened. But I also know I don't want to let my ego or my silence sit between us longer than it already has. You deserve honesty, and honestly — I messed up. I'm not going to make excuses for it.</p>
+
+    <p>You were happy that day. Actually happy — the kind of happy that doesn't come around often. You had gone shopping for your convocation, a day that meant something real to you, and you wanted to share that excitement with me. That's all you wanted. To show me what you picked out, to let me be part of that little moment of joy. And instead of being there for you, I ruined it. I took something that was supposed to be a good memory and made it heavy. That's not something I'm proud of, and I'm genuinely sorry for it.</p>
 
     <h2>What I should have done differently</h2>
     <p>I should have been more careful with my words. I should have listened more and reacted less. Whatever hurt you — even if I didn't fully realize it in the moment — matters, because you matter. Your feelings are never small to me, even when I act like they are. And I hate that I made you feel like they were.</p>
@@ -236,6 +233,8 @@
       <li>The way you still show up, even when things are hard</li>
       <li>How much you care — about me, about us, about the little things</li>
       <li>That you keep everything I give you, even the dried flowers 🌸</li>
+      <li>How hard you try, quietly, without asking for credit</li>
+      <li>That your love has always been more consistent than my behavior 😔</li>
       <li>Every moment you chose to stay when it would've been easier not to</li>
     </ul>
 
@@ -246,13 +245,15 @@
       <br/><li>I'm sorry for the times I was too stubborn to admit I was wrong sooner.</li>
       <br/><li>I'm sorry for making you carry feelings that I should've helped lighten.</li>
       <br/><li>You have a soft heart, and I should protect it — not be the reason it hurts.</li>
+      <br/><li>You give so much of yourself, quietly, without asking for recognition. The least I can do is notice that and be worthy of it.</li>
       <br/><li>I don't want to be someone who takes you for granted. And right now, I know I have been — and that's on me.</li>
       <br/><li>You deserve someone who gets it right more often than they get it wrong. I want to be that person for you.</li>
       <br/>I love you, Duaa. Not just when things are easy — but right now, in the middle of this. And that's exactly why I'm saying this. 💕
     </ul>
 
     <h2>One last thing 🤍</h2>
-    <p>You're my person, Duaa. I don't want to lose that over something that could've been handled better — and next time, it will be.<p>
+    <p>I'm not sending you this to get a quick reply or to make the tension disappear overnight. Take your time. Feel what you feel. I just needed you to know where I stand — and that where I stand is beside you, if you'll still have me.<br/>
+    <br/>You're my person, Duaa. I don't want to lose that over something that could've been handled better — and next time, it will be.<br/>
     <br/>I'm sorry. I mean it. ❤️</p>
   </div>
 
@@ -260,9 +261,9 @@
   <div class="video-container">
     <img src="14152-illustration-of-a-red-heart-pv.png" alt="Heart" class="heart-left">
     <div class="video-wrapper">
-      <h2 style="color: #ff6f61;">Us, at our best 💕</h2>
-      <video controls loop autoplay muted>
-        <source src="Khat Navjot Ahuja 128 Kbps.mp3" type="video/mp4">
+      <h2 style="color: #ff6f61; margin-bottom: 12px;">Us, at our best 💕</h2>
+      <video controls loop autoplay muted playsinline>
+        <source src="WhatsApp Video 2026-02-15 at 10.05.41 PM.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -270,7 +271,7 @@
   </div>
 
   <footer>
-    &copy; 2026 Made with love — Shariq ❤️
+    &copy; 2026 Made with love and a lot of regret — Shariq ❤️
   </footer>
   </div>
 
